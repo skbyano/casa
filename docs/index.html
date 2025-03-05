@@ -124,7 +124,7 @@
 <!-- Carrossel de Imagens -->
 <div class="carousel">
     <div class="carousel-images">
-        <!-- Atualize os links com o caminho correto para suas imagens -->
+        <!-- Atualize os links com os links completos -->
         <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Aero.jpeg" alt="Aero">
         <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/FrenteD.jpg" alt="FrenteD">
         <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/FrenteE.jpg" alt="FrenteE">
@@ -155,4 +155,52 @@
             currentIndex++;
         } else {
             currentIndex = 0; // Volta para a primeira imagem
-       
+        }
+        updateCarouselPosition();
+    }
+
+    // Função para mover o carrossel para a imagem anterior
+    function moveToPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalImages - 1; // Vai para a última imagem
+        }
+        updateCarouselPosition();
+    }
+
+    // Função para atualizar a posição das imagens no carrossel
+    function updateCarouselPosition() {
+        const newTransformValue = -currentIndex * 100;
+        images.style.transform = `translateX(${newTransformValue}%)`;
+    }
+
+    // Navegação automática a cada 3 segundos
+    setInterval(moveToNext, 3000);
+
+    // Eventos de clique nos botões
+    prevButton.addEventListener('click', moveToPrev);
+    nextButton.addEventListener('click', moveToNext);
+</script>
+
+<!-- Itens para venda -->
+<div class="container">
+    <!-- Item Mitsubishi Lancer -->
+    <div class="item">
+        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/FrenteD.jpg" alt="Mitsubishi Lancer">
+        <div class="item-details">
+            <h2>Mitsubishi Lancer 2.0 16V 2015 (AUTO)</h2>
+            <p><strong>Descrição:</strong> Perfeito estado, carro bem cuidado e revisado.</p>
+            <p><strong>Estado:</strong> Usado, excelente condição</p>
+            <p><strong>Preço:</strong> <span class="price">R$ 62.000,00</span></p>
+            <p><strong>Negociável:</strong> <span class="negociavel">Sim</span></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Entre em contato: <strong>WhatsApp</strong> | <strong>E-mail</strong></p>
+</footer>
+
+</body>
+</html>
