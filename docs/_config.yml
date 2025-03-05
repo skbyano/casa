@@ -1,0 +1,8 @@
+# _config.yml
+
+title: "Venda de Itens"
+description: "Venda de itens de casa, incluindo carros e móveis."
+theme: jekyll-theme-primer
+baseurl: ""
+url: "https://skbyano.github.io" # Substitua pelo seu link
+markdown: kramdown
