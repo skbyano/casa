@@ -22,6 +22,49 @@
             margin: 20px auto;
             padding: 0 20px;
         }
+        
+        /* Estilos do carrossel */
+        .carousel {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Estilos do conteúdo dos itens */
         .item {
             display: flex;
             flex-wrap: wrap;
@@ -31,28 +74,35 @@
             background-color: white;
             border-radius: 8px;
         }
+
         .item img {
             max-width: 300px;
             margin-right: 20px;
             border-radius: 8px;
         }
+
         .item-details {
             flex: 1;
         }
+
         .item-details h2 {
             margin-top: 0;
         }
+
         .item-details p {
             margin: 5px 0;
         }
+
         .price {
             font-size: 1.2em;
             font-weight: bold;
             color: #4CAF50;
         }
+
         .negociavel {
             color: #FF5722;
         }
+
         footer {
             background-color: #4CAF50;
             color: white;
@@ -71,6 +121,63 @@
     <p>Estamos nos mudando! Confira nossos itens disponíveis para venda.</p>
 </header>
 
+<!-- Carrossel de Imagens -->
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="https://via.placeholder.com/600x400?text=Sofá" alt="Sofá">
+        <img src="https://via.placeholder.com/600x400?text=Geladeira" alt="Geladeira">
+        <img src="https://via.placeholder.com/600x400?text=Mesa" alt="Mesa">
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+
+    <!-- Botões de navegação -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+
+<script>
+    const images = document.querySelector('.carousel-images');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    let currentIndex = 0;
+    const totalImages = document.querySelectorAll('.carousel-images img').length;
+
+    // Função para mover o carrossel para a próxima imagem
+    function moveToNext() {
+        if (currentIndex < totalImages - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Volta para a primeira imagem
+        }
+        updateCarouselPosition();
+    }
+
+    // Função para mover o carrossel para a imagem anterior
+    function moveToPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalImages - 1; // Vai para a última imagem
+        }
+        updateCarouselPosition();
+    }
+
+    // Função para atualizar a posição das imagens no carrossel
+    function updateCarouselPosition() {
+        const newTransformValue = -currentIndex * 100;
+        images.style.transform = `translateX(${newTransformValue}%)`;
+    }
+
+    // Navegação automática a cada 3 segundos
+    setInterval(moveToNext, 3000);
+
+    // Eventos de clique nos botões
+    prevButton.addEventListener('click', moveToPrev);
+    nextButton.addEventListener('click', moveToNext);
+</script>
+
+<!-- Itens para venda -->
 <div class="container">
     <!-- Item 1 -->
     <div class="item">
