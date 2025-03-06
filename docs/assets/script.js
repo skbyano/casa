@@ -1,6 +1,6 @@
 // script.js
 
-// Selecionando os elementos necessários
+// Seleção dos elementos necessários
 const images = document.querySelectorAll('.gallery-item');
 const modal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
@@ -15,7 +15,7 @@ images.forEach((image, index) => {
     image.addEventListener('click', () => {
         modal.style.display = 'block';
         modalImage.src = image.src;
-        currentIndex = index;
+        currentIndex = index; // Salva o índice da imagem selecionada
     });
 });
 
@@ -29,7 +29,7 @@ prevButton.addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
     } else {
-        currentIndex = images.length - 1;
+        currentIndex = images.length - 1; // Vai para a última imagem
     }
     modalImage.src = images[currentIndex].src;
 });
@@ -39,7 +39,7 @@ nextButton.addEventListener('click', () => {
     if (currentIndex < images.length - 1) {
         currentIndex++;
     } else {
-        currentIndex = 0;
+        currentIndex = 0; // Volta para a primeira imagem
     }
     modalImage.src = images[currentIndex].src;
 });
