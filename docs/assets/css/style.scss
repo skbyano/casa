@@ -31,8 +31,8 @@ h1 {
 
 /* Estilos do carrossel */
 .carousel {
-    width: 100%; /* Definindo a largura do carrossel */
-    max-width: 600px; /* Definindo uma largura máxima */
+    width: 20%; /* Definindo a largura do carrossel */
+    max-width: 200px; /* Definindo uma largura máxima */
     margin: 20px auto;
     overflow: hidden; /* Ocultando imagens fora da área visível */
     position: relative;
@@ -40,13 +40,13 @@ h1 {
 
 .carousel-images {
     display: flex; /* Colocando as imagens em linha */
-    transition: transform 1s ease-in-out; /* Adicionando uma transição suave */
+    transition: transform 3s ease-in-out; /* Adicionando uma transição suave */
 }
 
 .carousel img {
-    width: 100%; /* A imagem vai ocupar 100% da largura do contêiner */
+    width: 20%; /* A imagem vai ocupar 100% da largura do contêiner */
     height: auto; /* Mantendo a proporção da imagem */
-    max-height: 400px; /* Limite para a altura das imagens */
+    max-height: 100px; /* Limite para a altura das imagens */
     object-fit: cover; /* Fazendo com que a imagem cubra o espaço sem distorcer */
     border-radius: 8px;
 }
