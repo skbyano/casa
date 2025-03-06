@@ -4,19 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venda de Itens da Casa</title>
-    <link rel="stylesheet" href="assets/css/style.css"> <!-- Caminho para o arquivo CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        /* Estilos do carrossel */
+        .carousel {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Estilos do conteúdo dos itens */
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        .item img {
+            max-width: 300px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-details h2 {
+            margin-top: 0;
+        }
+
+        .item-details p {
+            margin: 5px 0;
+        }
+
+        .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .negociavel {
+            color: #FF5722;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Cabeçalho -->
 <header>
     <h1>Venda de Itens da Casa</h1>
     <p>Estamos nos mudando! Confira nossos itens disponíveis para venda.</p>
 </header>
 
+<!-- Carrossel de Imagens -->
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/Aero.jpg" alt="Aero">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/FrenteD.jpg" alt="FrenteD">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/FrenteE.jpg" alt="FrenteE">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/Fundo.jpg" alt="Fundo">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/Lateral.jpg" alt="Lateral">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/Motor.jpg" alt="Motor">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/P1.jpg" alt="P1">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/P2.jpg" alt="P2">
+        <img src="https://raw.githubusercontent.com/skbyano/imagem/main/P3.jpg" alt="P3">
+    </div>
+
+    <!-- Botões de navegação -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+
+<script>
+    const images = document.querySelector('.carousel-images');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    let currentIndex = 0;
+    const totalImages = document.querySelectorAll('.carousel-images img').length;
+
+    // Função para mover o carrossel para a próxima imagem
+    function moveToNext() {
+        if (currentIndex < totalImages - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Volta para a primeira imagem
+        }
+        updateCarouselPosition();
+    }
+
+    // Função para mover o carrossel para a imagem anterior
+    function moveToPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalImages - 1; // Vai para a última imagem
+        }
+        updateCarouselPosition();
+    }
+
+    // Função para atualizar a posição das imagens no carrossel
+    function updateCarouselPosition() {
+        const newTransformValue = -currentIndex * 100;
+        images.style.transform = `translateX(${newTransformValue}%)`;
+    }
+
+    // Navegação automática a cada 3 segundos
+    setInterval(moveToNext, 3000);
+
+    // Eventos de clique nos botões
+    prevButton.addEventListener('click', moveToPrev);
+    nextButton.addEventListener('click', moveToNext);
+</script>
+
 <!-- Itens para venda -->
 <div class="container">
-    <!-- Item 1 - Mitsubishi Lancer -->
+    <!-- Item Mitsubishi Lancer -->
     <div class="item">
         <img src="assets/images/FrenteD.jpeg" alt="Mitsubishi Lancer" class="item-image">
         <div class="item-details">
@@ -27,23 +195,8 @@
             <p><strong>Negociável:</strong> <span class="negociavel">Sim</span></p>
         </div>
     </div>
-
-    <!-- Exemplo de outro item -->
-    <div class="item">
-        <img src="assets/images/Lateral.jpg" alt="Sofá Comfort" class="item-image">
-        <div class="item-details">
-            <h2>Sofá Comfort 3 Lugares</h2>
-            <p><strong>Descrição:</strong> Sofá de 3 lugares em excelente estado, de couro sintético.</p>
-            <p><strong>Estado:</strong> Usado, mas em ótimo estado</p>
-            <p><strong>Preço:</strong> <span class="price">R$ 1.500,00</span></p>
-            <p><strong>Negociável:</strong> <span class="negociavel">Não</span></p>
-        </div>
-    </div>
-
-    <!-- Outros produtos podem ser adicionados da mesma forma -->
 </div>
 
-<!-- Rodapé -->
 <footer>
     <p>Entre em contato: <strong>WhatsApp</strong> | <strong>E-mail</strong></p>
 </footer>
