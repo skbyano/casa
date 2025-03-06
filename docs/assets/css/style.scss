@@ -1,14 +1,16 @@
 /* style.scss */
 
-/* Defina o estilo básico para o seu site */
+/* Estilo básico do corpo */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Para garantir que paddings e borders não afetem a largura total */
 }
 
+/* Cabeçalho */
 header {
     background-color: #007bff;
     color: white;
@@ -21,24 +23,19 @@ h1 {
     font-size: 36px;
 }
 
-.produto {
-    margin: 20px;
-}
-
-.produto h2 {
-    font-size: 24px;
-}
-
+/* Galeria de imagens */
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    gap: 15px;
 }
 
 .gallery-item {
     width: 200px;
-    margin: 10px;
+    height: 150px; /* Fixando a altura das imagens */
+    object-fit: cover; /* Faz com que a imagem se ajuste sem distorcer */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -49,6 +46,7 @@ h1 {
     transform: scale(1.05);
 }
 
+/* Modal de imagem */
 .modal {
     display: none;
     position: fixed;
@@ -60,6 +58,7 @@ h1 {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
     padding-top: 60px;
+    text-align: center;
 }
 
 .modal-content {
@@ -68,6 +67,7 @@ h1 {
     width: 80%;
     max-width: 700px;
     border-radius: 8px;
+    object-fit: contain; /* As imagens agora podem se ajustar ao tamanho do modal sem distorcer */
 }
 
 .modal-caption {
@@ -98,10 +98,13 @@ h1 {
     right: 10px;
 }
 
-/* Estilo do footer */
+/* Rodapé */
 footer {
     background-color: #007bff;
     color: white;
     text-align: center;
     padding: 10px 0;
+    position: relative;
+    margin-top: 20px; /* Garantir que o rodapé não sobreponha o conteúdo */
+    width: 100%;
 }
