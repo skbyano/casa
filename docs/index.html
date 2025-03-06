@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venda de Itens da Casa</title>
+    <!-- Link para o Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,6 +64,15 @@
             bottom: 0;
             width: 100%;
         }
+        .whatsapp-icon {
+            font-size: 30px; /* Tamanho do ícone */
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .whatsapp-icon:hover {
+            color: #25D366; /* Cor quando passar o mouse */
+        }
     </style>
 </head>
 <body>
@@ -78,7 +89,7 @@
         <div class="item-details">
             <h2>Mitsubishi Lancer 2.0 16V 2016 (AUTO)</h2>
             <p><strong>Descrição:</strong> Perfeito estado, carro bem cuidado e revisado (Nota de revisão disponível)/ Oléo de Câmbio OK / Oléo realizado 62km/  IPVA Pago / Sem multas pendentes / </p>
-            <p><strong>Estado:</strong> Excelente condição (</p>
+            <p><strong>Estado:</strong> Excelente condição</p>
             <p><strong>Preço:</strong> <span class="price">R$ 62.000,00</span></p>
             <p><strong>Negociável:</strong> <span class="negociavel">Sim</span></p>
         </div>
@@ -109,8 +120,11 @@
     </div>
 </div>
 
+<!-- Rodapé com ícone do WhatsApp -->
 <footer>
-    <p>Entre em contato: 41 99815-3942 <strong>WhatsApp</strong>
+    <a href="https://wa.me/5541998153942" class="whatsapp-icon" target="_blank">
+        <i class="fab fa-whatsapp"></i> 41 99815-3942
+    </a>
 </footer>
 
 </body>
