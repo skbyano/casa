@@ -60,18 +60,29 @@
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            bottom: 0;
+            position: relative;
             width: 100%;
+            box-sizing: border-box;
         }
+        /* Estilo para o ícone do WhatsApp */
         .whatsapp-icon {
-            font-size: 30px; /* Tamanho do ícone */
+            font-size: 30px;
             color: white;
             text-decoration: none;
             margin-right: 10px;
         }
         .whatsapp-icon:hover {
-            color: #25D366; /* Cor quando passar o mouse */
+            color: #25D366;
+        }
+        /* Responsividade do rodapé */
+        @media (max-width: 768px) {
+            footer {
+                font-size: 14px;
+                padding: 15px;
+            }
+            .whatsapp-icon {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -90,7 +101,6 @@
             <h2>Mitsubishi Lancer 2.0 16V 2016 (AUTO)</h2>
             <p><strong>Descrição:</strong> Perfeito estado, carro bem cuidado e revisado (Nota de revisão disponível)/ Oléo de Câmbio OK / Oléo realizado 62km/  IPVA Pago / Sem multas pendentes / </p>
             <p><strong>Estado:</strong> Excelente condição</p>
-            <p><strong>Fotos:</strong> https://drive.google.com/drive/folders/1em2_b5go4pzU6sVlJOrjfhEiV3rTeJzO </p>
             <p><strong>Preço:</strong> <span class="price">R$ 62.000,00</span></p>
             <p><strong>Negociável:</strong> <span class="negociavel">Sim</span></p>
         </div>
@@ -100,7 +110,7 @@
     <div class="item">
         <img src="assets/images/FrenteE.jpeg" alt="Mitsubishi Lancer2" class="item-image">
         <div class="item-details">
-            <h2>Geladeira Branca - 300L</h2>
+            <h2>Mitsubishi Lancer2.0</h2>
             <p><strong>Descrição:</strong> Geladeira de 300L funcionando perfeitamente.</p>
             <p><strong>Estado:</strong> Usada, mas em ótimo estado</p>
             <p><strong>Preço:</strong> <span class="price">R$ 1.200,00</span></p>
