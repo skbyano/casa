@@ -21,54 +21,42 @@ h1 {
     font-size: 36px;
 }
 
-.produto {
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para a galeria de imagens */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     margin: 20px;
 }
 
-.produto h2 {
-    font-size: 24px;
-}
-
-/* Estilos do carrossel */
-.carousel {
-    width: 20%; /* Definindo a largura do carrossel */
-    max-width: 200px; /* Definindo uma largura máxima */
-    margin: 20px auto;
-    overflow: hidden; /* Ocultando imagens fora da área visível */
-    position: relative;
-}
-
-.carousel-images {
-    display: flex; /* Colocando as imagens em linha */
-    transition: transform 3s ease-in-out; /* Adicionando uma transição suave */
-}
-
-.carousel img {
-    width: 20%; /* A imagem vai ocupar 100% da largura do contêiner */
-    height: auto; /* Mantendo a proporção da imagem */
-    max-height: 100px; /* Limite para a altura das imagens */
-    object-fit: cover; /* Fazendo com que a imagem cubra o espaço sem distorcer */
+.gallery-item {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 8px;
-}
-
-/* Estilos dos botões de navegação */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
     cursor: pointer;
-    font-size: 20px;
-    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.prev {
-    left: 10px;
+.gallery-item:hover {
+    transform: scale(1.05);
 }
 
-.next {
-    right: 10px;
-}
+/* Estilos do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0
