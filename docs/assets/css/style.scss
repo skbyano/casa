@@ -1,16 +1,14 @@
 /* style.scss */
 
-/* Estilo básico do corpo */
+/* Defina o estilo básico para o seu site */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Cabeçalho */
 header {
     background-color: #007bff;
     color: white;
@@ -23,66 +21,24 @@ h1 {
     font-size: 36px;
 }
 
-header p {
-    margin: 10px 0;
+.produto {
+    margin: 20px;
 }
 
-/* Container para os itens de venda */
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+.produto h2 {
+    font-size: 24px;
 }
 
-/* Estilos dos itens */
-.item {
-    display: flex; /* Flexbox para alinhamento lado a lado */
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 8px;
-    align-items: center; /* Alinha verticalmente a imagem e descrição */
+.carousel {
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 10px;
 }
 
-.item img {
-    width: 150px; /* Ajuste o tamanho da imagem para 150px de largura */
-    height: auto;
-    margin-right: 20px; /* Espaço entre imagem e texto */
+.carousel img {
+    width: 200px;
+    margin-right: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.item-details {
-    flex: 1; /* O texto vai ocupar o espaço restante */
-}
-
-.item-details h2 {
-    margin-top: 0;
-    font-size: 24px;
-}
-
-.item-details p {
-    margin: 5px 0;
-}
-
-.price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #4CAF50;
-}
-
-.negociavel {
-    color: #FF5722;
-}
-
-/* Rodapé */
-footer {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    margin-top: 20px;
-    width: 100%;
-}
