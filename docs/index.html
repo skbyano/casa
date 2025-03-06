@@ -4,57 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venda de Itens da Casa</title>
-    <link rel="stylesheet" href="assets/css/style.css"> <!-- Caminho do CSS -->
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Caminho para o arquivo CSS -->
 </head>
 <body>
 
+<!-- Cabeçalho -->
 <header>
     <h1>Venda de Itens da Casa</h1>
     <p>Estamos nos mudando! Confira nossos itens disponíveis para venda.</p>
 </header>
 
-<!-- Galeria de Imagens -->
-<div class="image-gallery">
-    <img src="assets/images/Aero.jpeg" alt="Aero" class="gallery-item">
-    <img src="assets/images/FrenteD.jpg" alt="FrenteD" class="gallery-item">
-    <img src="assets/images/FrenteE.jpg" alt="FrenteE" class="gallery-item">
-    <img src="assets/images/Fundo.jpg" alt="Fundo" class="gallery-item">
-    <img src="assets/images/Lateral.jpg" alt="Lateral" class="gallery-item">
-    <img src="assets/images/Motor.jpg" alt="Motor" class="gallery-item">
-    <img src="assets/images/P1.jpg" alt="P1" class="gallery-item">
-    <img src="assets/images/P2.jpg" alt="P2" class="gallery-item">
-    <img src="assets/images/P3.jpg" alt="P3" class="gallery-item">
-</div>
-
-<!-- Modal de Imagem -->
-<div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-    <div class="modal-caption">
-        <button class="prev">❮</button>
-        <button class="next">❯</button>
-    </div>
-</div>
-
 <!-- Itens para venda -->
 <div class="container">
-    <!-- Item Mitsubishi Lancer -->
+    <!-- Item 1 - Mitsubishi Lancer -->
     <div class="item">
-        <img src="assets/images/FrenteD.jpeg" alt="Mitsubishi Lancer">
+        <img src="assets/images/FrenteD.jpeg" alt="Mitsubishi Lancer" class="item-image">
         <div class="item-details">
-            <h2>Mitsubishi Lancer 2.0 16V 2016 (AUTO)</h2>
+            <h2>Mitsubishi Lancer 2.0 16V 2015 (AUTO)</h2>
             <p><strong>Descrição:</strong> Perfeito estado, carro bem cuidado e revisado.</p>
             <p><strong>Estado:</strong> Usado, excelente condição</p>
             <p><strong>Preço:</strong> <span class="price">R$ 62.000,00</span></p>
             <p><strong>Negociável:</strong> <span class="negociavel">Sim</span></p>
         </div>
     </div>
+
+    <!-- Adicione outros itens aqui -->
+    <!-- Exemplo de outro item -->
+    <div class="item">
+        <img src="assets/images/Lateral.jpg" alt="Sofá Comfort" class="item-image">
+        <div class="item-details">
+            <h2>Sofá Comfort 3 Lugares</h2>
+            <p><strong>Descrição:</strong> Sofá de 3 lugares em excelente estado, de couro sintético.</p>
+            <p><strong>Estado:</strong> Usado, mas em ótimo estado</p>
+            <p><strong>Preço:</strong> <span class="price">R$ 1.500,00</span></p>
+            <p><strong>Negociável:</strong> <span class="negociavel">Não</span></p>
+        </div>
+    </div>
+
+    <!-- Outros produtos podem ser adicionados da mesma forma -->
 </div>
 
+<!-- Rodapé -->
 <footer>
-    <p>Entre em contato:41 998153942 <strong>WhatsApp</strong> | <strong>E-mail</strong></p>
+    <p>Entre em contato: <strong>WhatsApp</strong> | <strong>E-mail</strong></p>
 </footer>
 
-<script src="assets/scripts/script.js"></script> <!-- Caminho do JS -->
 </body>
 </html>
