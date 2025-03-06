@@ -4,115 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venda de Itens da Casa</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        /* Estilos do carrossel */
-        .carousel {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
-
-        .carousel-images img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        /* Estilos do conteúdo dos itens */
-        .item {
-            display: flex;
-            flex-wrap: wrap;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: white;
-            border-radius: 8px;
-        }
-
-        .item img {
-            max-width: 300px;
-            margin-right: 20px;
-            border-radius: 8px;
-        }
-
-        .item-details {
-            flex: 1;
-        }
-
-        .item-details h2 {
-            margin-top: 0;
-        }
-
-        .item-details p {
-            margin: 5px 0;
-        }
-
-        .price {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #4CAF50;
-        }
-
-        .negociavel {
-            color: #FF5722;
-        }
-
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -121,67 +13,28 @@
     <p>Estamos nos mudando! Confira nossos itens disponíveis para venda.</p>
 </header>
 
-<!-- Carrossel de Imagens -->
-<div class="carousel">
-    <div class="carousel-images">
-        <!-- Atualize os links com os links completos -->
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Aero.jpeg" alt="Aero">
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/FrenteD.jpg" alt="FrenteD">
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/FrenteE.jpg" alt="FrenteE">
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Fundo.jpg" alt="Fundo">
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Lateral.jpg" alt="Lateral">
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Motor.jpg" alt="Motor">
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/P1.jpg" alt="P1">
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/P2.jpg" alt="P2">
-        <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/P3.jpg" alt="P3">
-    </div>
-
-    <!-- Botões de navegação -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
+<!-- Carrossel de Imagens (Galeria de Imagens) -->
+<div class="image-gallery">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Aero.jpeg" alt="Aero" class="gallery-item">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/FrenteD.jpg" alt="FrenteD" class="gallery-item">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/FrenteE.jpg" alt="FrenteE" class="gallery-item">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Fundo.jpg" alt="Fundo" class="gallery-item">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Lateral.jpg" alt="Lateral" class="gallery-item">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/Motor.jpg" alt="Motor" class="gallery-item">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/P1.jpg" alt="P1" class="gallery-item">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/P2.jpg" alt="P2" class="gallery-item">
+    <img src="https://raw.githubusercontent.com/skbyano/casa/main/docs/assets/images/P3.jpg" alt="P3" class="gallery-item">
 </div>
 
-<script>
-    const images = document.querySelector('.carousel-images');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-
-    let currentIndex = 0;
-    const totalImages = document.querySelectorAll('.carousel-images img').length;
-
-    // Função para mover o carrossel para a próxima imagem
-    function moveToNext() {
-        if (currentIndex < totalImages - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Volta para a primeira imagem
-        }
-        updateCarouselPosition();
-    }
-
-    // Função para mover o carrossel para a imagem anterior
-    function moveToPrev() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = totalImages - 1; // Vai para a última imagem
-        }
-        updateCarouselPosition();
-    }
-
-    // Função para atualizar a posição das imagens no carrossel
-    function updateCarouselPosition() {
-        const newTransformValue = -currentIndex * 100;
-        images.style.transform = `translateX(${newTransformValue}%)`;
-    }
-
-    // Navegação automática a cada 3 segundos
-    setInterval(moveToNext, 3000);
-
-    // Eventos de clique nos botões
-    prevButton.addEventListener('click', moveToPrev);
-    nextButton.addEventListener('click', moveToNext);
-</script>
+<!-- Modal de Imagem -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption">
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+</div>
 
 <!-- Itens para venda -->
 <div class="container">
@@ -202,5 +55,6 @@
     <p>Entre em contato: <strong>WhatsApp</strong> | <strong>E-mail</strong></p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
