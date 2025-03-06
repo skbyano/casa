@@ -1,6 +1,6 @@
 /* style.scss */
 
-/* Defina o estilo básico para o seu site */
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -29,15 +29,46 @@ h1 {
     font-size: 24px;
 }
 
+/* Estilos do carrossel */
 .carousel {
-    display: flex;
-    overflow-x: scroll;
-    margin-top: 10px;
+    width: 100%; /* Definindo a largura do carrossel */
+    max-width: 600px; /* Definindo uma largura máxima */
+    margin: 20px auto;
+    overflow: hidden; /* Ocultando imagens fora da área visível */
+    position: relative;
+}
+
+.carousel-images {
+    display: flex; /* Colocando as imagens em linha */
+    transition: transform 1s ease-in-out; /* Adicionando uma transição suave */
 }
 
 .carousel img {
-    width: 200px;
-    margin-right: 10px;
+    width: 100%; /* A imagem vai ocupar 100% da largura do contêiner */
+    height: auto; /* Mantendo a proporção da imagem */
+    max-height: 400px; /* Limite para a altura das imagens */
+    object-fit: cover; /* Fazendo com que a imagem cubra o espaço sem distorcer */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos dos botões de navegação */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
